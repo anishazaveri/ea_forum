@@ -3,7 +3,7 @@ import scrapy
 import pandas as pd
 from pathlib import PureWindowsPath
 link_file = pd.read_csv(PureWindowsPath(
-    r"C:\Users\light\Dropbox (Personal)\Projects\ea_forum\data\ea_forum\2013\raw.csv"))
+    r"C:\Users\light\Dropbox (Personal)\Projects\ea_forum\data\ea_forum\2020\raw.csv"))
 links = link_file[link_file['Link'].str.contains(
     "https://forum.effectivealtruism.org/posts/")]['Link'].to_list()
 
