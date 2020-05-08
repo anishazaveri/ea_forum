@@ -1,19 +1,17 @@
-library(readr)
-library(tm)
-library(dplyr)
-library(xtable)
+library(wordcloud)
+library(extrafont)
+loadfonts(device = "win")
 
-ssc <- read_file("../../data/ssc/ssc_for_Rwordcloud.txt")
-eaf <- read_file("../../data/ea_forum/eaforum_for_Rwordcloud.txt")
+tdm <- read.csv('../../data/eaforum_scc_BOW.csv', row.names=1)
 
-docs <- Corpus(VectorSource(sotu$speechtext)) %>%
-  tm_map(removePunctuation) %>%
-  tm_map(removeNumbers) %>%
-  tm_map(tolower)  %>%
-  tm_map(removeWords, stopwords("english")) %>%
-  tm_map(stripWhitespace) %>%
-  tm_map(PlainTextDocument)
+par(mfrow=c(1,1))
+png(filename="../../wordclouds/eaforum_ssc_comparative.png", width=12,height=8, units='in', res=300)
+comparison.cloud(tdm, colors = c("#E41A1C","#377EB8"),
+                 title.size=1, max.words=400, family="Gill Sans MT", font=1)
+dev.off()
 
-tdm <- TermDocumentMatrix(docs) %>%
-  as.matrix()
-colnames(tdm) <- c("Bush","Obama")
+
+pdf(file="../../wordclouds/eaforum_ssc_commonality.pdf")
+commonality.cloud(tdm, random.order=FALSE,  colors = brewer.pal(4, "Set1"), max.words=400, family="Gill Sans MT", font=1)
+dev.off()
+
