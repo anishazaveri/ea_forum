@@ -21,7 +21,7 @@ I cleaned the data and restricted subsequent analysis on posts published between
 
 Here are the number of posts published on the EA Forum each year:
 
-![](https://raw.githubusercontent.com/anishazaveri/austen_plots/master/example/sensitivity_output/austen_plot.png)
+![](https://raw.githubusercontent.com/anishazaveri/ea_forum/master/out/images/posts_year.png)
 
 
 
