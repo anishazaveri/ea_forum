@@ -21,6 +21,13 @@ I cleaned the data and restricted subsequent analysis on posts published between
 
 Here are the number of posts published on the EA Forum each year:
 
+![](https://raw.githubusercontent.com/anishazaveri/austen_plots/master/example/sensitivity_output/austen_plot.png)
+
+
+
+
+
+
 **date**|**title**|**author**|**num\_comments**
 :-----:|:-----:|:-----:|:-----:
 4/23/2019|[Long-Term Future Fund: April 2019 grant recommendations](https://forum.effectivealtruism.org/posts/CJJDwgyqT4gXktq6g/long-term-future-fund-april-2019-grant-recommendations)|[Habryka](https://forum.effectivealtruism.org/users/habryka)|240
