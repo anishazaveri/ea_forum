@@ -99,20 +99,25 @@ My next goal was to make a word cloud representing the most commonly used words 
 - Removed any tokens containing numbers
 - Removed any tokens containing 'http' or 'www'
 
-Here's the resulting word cloud (built using https://github.com/amueller/word_cloud on x tokens):
+The resulting word cloud was built using
+[https://github.com/amueller/word_cloud] on ~2.6 million tokens):
 
+<img src="https://raw.githubusercontent.com/anishazaveri/ea_forum/master/out/wordclouds/eaforum_wordcloud.jpg"/>
 
+The most common words appeared to be 'one' and 'work'. I thought it would be instructive to see if these were over-represented in the EA Forum specifically, or are generally over-represented in most online documents. So, to generate a control, I scraped all posts from [Slate Star Codex](https://slatestarcodex.com/) (SSC) and performed text preprocessing to generate ~1.4 million tokens. 
 
-The most common word appeared to be 'people' and 'work'. I thought it would be instructive to see if these were over-represented in the EA Forum specifically, or are generally over-represented in most online documents. So, to generate a control, I scraped all posts from [Slate Star Codex](https://slatestarcodex.com/) (SSC) and performed text preprocessing to generate x tokens. 
+Using R's [wordcloud](https://cran.r-project.org/web/packages/wordcloud/index.html) package I built a "comparative" word cloud showing words over-represented in the text corpus from the EA Forum over SSC and vice-versa. 
 
-Using R's [wordcloud](https://cran.r-project.org/web/packages/wordcloud/index.html) package I built a "comparative" word cloud showing words over-represented in text corpus from the EA Forum over SSC and vice-versa. 
+<img src="https://github.com/anishazaveri/ea_forum/blob/master/out/wordclouds/eaforum_ssc_comparative-edited.png?raw=true"/>
 
 What about words that were common between the EA Forum and SSC?
 
 
-# __GPT2__
-Finally, I used the text corpus from the EA Forum to fine-tune GPT2, from OpenAI, a language model trained on a dataset of 8 million web pages. I used a [Colab notebook](https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce) made using [gpt2-simple](https://minimaxir.com/2019/09/howto-gpt2/) as a template and fine-tuned either the "small" (124 M parameters) or "medium" (355 M parameters). 
 
+
+# GPT2
+
+Finally, I used the text corpus from the EA Forum to fine-tune GPT2, from OpenAI, a language model trained on a dataset of 8 million web pages. I used a [Colab notebook](https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce) made using [gpt2-simple](https://minimaxir.com/2019/09/howto-gpt2/) as a template and fine-tuned either the "small" (124 M parameters) or "medium" (355 M parameters). 
 
 
 > What is Rationality in AI?
